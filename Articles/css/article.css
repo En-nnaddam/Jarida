@@ -1,0 +1,16 @@
+.journal {
+    width: 100vw;
+    padding:1em 2em;
+    display: grid;
+    gap: 1em;
+}
+
+.page {
+    padding: 1em;
+    background-color: burlywood;
+}
+
+.page img{
+    max-width: 20em;
+    max-height: 30em;
+}

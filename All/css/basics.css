@@ -1,0 +1,63 @@
+:root {
+  /* palette 3 */
+  --color-primary-light: #606c38;
+  --color-primary-dark: #283618;
+  --color-light: #f8f9fa;
+  --color-dark: #212529;
+  --color-secondry-light: #dda15e;
+  --color-secondry-dark: #bc6c25;
+/* 
+  --color-primary-light: #dda15e;
+  --color-primary-dark: #bc6c25;
+  --color-light: #fefae0;
+  --color-dark: #212529;
+  --color-secondry-light: #606c38;
+  --color-secondry-dark: #283618; */
+
+  --bg-primary-light: var(--color-primary-light);
+  --bg-primary-dark: var(--color-primary-dark);
+  --bg-light: var(--color-light);
+  --bg-dark: var(var(--color-dark));
+  --bg-secondry-light: var(--color-secondry-light);
+  --bg-secondry-dark: var(--color-secondry-dark);
+  
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.gap {
+  gap: 1em;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

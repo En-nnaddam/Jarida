@@ -1,0 +1,25 @@
+#profile-user {
+    width: max-content;
+    margin-inline: auto;
+    text-align: center;
+}
+
+#profile-user img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+}
+
+#profile-user button {
+    width: 100%;
+    padding: 1em;
+    font-weight: 700;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    cursor: pointer;
+}
+
+#profile-user button:hover {
+    /* border-color: black; */
+    background: -webkit-linear-gradient(top, #606c38, #434d27);
+    color: white
+}
