@@ -8,11 +8,11 @@ require '../../All/db/connexion.php';
 $db = connecteMyDb();
 $sql = 'DELETE FROM article WHERE id = ?';
 $requet = $db->prepare($sql);
-$reponse = $requet->execute(array($_SESSION['idArticle']));
+$reponse = $requet->execute(array($_GET['idArticle']));
 
 if($reponse) {
     echo '<script> alert("Article removed") </script>';
-    header('Location: ./journals.php');
+    header('Location: ./myArticles.php');
 } else {
     echo '<script> alert("Something wrong!") </script>';
 }

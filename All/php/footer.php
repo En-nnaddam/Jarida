@@ -67,6 +67,7 @@
     <script src="/Jarida/All/js/menu.js"></script>
     <script src="/Jarida/Home/js/sideshow.js"></script>
     <script src="/Jarida/All/js/accordion.js"></script>
+    <script src="/Jarida/All/js/header.js"></script>
     <script src="/Jarida/All/js/drop_down_category.js"></script>
     <script src="/Jarida/All/js/loader.js"></script>
 

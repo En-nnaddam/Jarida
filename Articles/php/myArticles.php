@@ -35,9 +35,8 @@ if ($requet->execute(array($userId))) : ?>
                 <?php
                 if (isset($_SESSION['userId'])) {
                     if ($_SESSION['userId'] == $donnee['author']) {
-                        // register the id of the article
-                        $_SESSION['idArticle'] = $donnee['id'];
-                        echo  '<a href="./deleteArticle.php"><button>Delete</button></a>';
+                        // share the id of the article using url
+                        echo  '<a href="./deleteArticle.php?idArticle='.$donnee["id"].'"><button>Delete</button></a>';
                     }
                 } ?>
 
