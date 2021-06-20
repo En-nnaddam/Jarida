@@ -1,6 +1,13 @@
 <?php
     session_start();
 
+    function getInfoUser($data) {
+        $_SESSION['userId'] = $data['id'];
+        $_SESSION['userPicter'] = $data['picter'];
+        $_SESSION['firstName'] = $data['firstName'];
+        $_SESSION['lastName'] = $data['lastName'];
+    } 
+
     if(isset($_POST['login'])) {
         // to connect with data base: 
         require_once('../../All/db/connexion.php');
@@ -13,17 +20,13 @@
         $sql = 'SELECT * FROM user WHERE email = ?';
         $requet = $db->prepare($sql);
         $requet->execute(array($email));
-        $donnee = $requet->fetch();
+        $data = $requet->fetch();
 
-        if($donnee) {
+        if($data) {
 
-            if($donnee['password'] == $password) {
+            if($data['password'] == $password) {
 
-                $_SESSION['userId'] = $donnee['id'];
-                $_SESSION['userPicter'] = $donnee['picter'];
-                $_SESSION['firstName'] = $donnee['firstName'];
-                $_SESSION['lastName'] = $donnee['lastName'];
-
+                getInfoUser($data);
                 header("Location: /Jarida/Home/php/index.php");
 
             } else {

@@ -14,13 +14,13 @@ if (isset($_POST['create'])) {
     $target = "../../User/images/" . basename($_FILES['picter']['name']);
 
     // Recupare data user :
-    $firstName = $_POST['firstName'];
-    $lastName = $_POST['lastName'];
+    $firstName = clean($_POST['firstName']);
+    $lastName = clean($_POST['lastName']);
     $email = $_POST['email'];
     $password = md5($_POST['password']);
     $confirmPassword = md5($_POST['confirmPassword']);
     $gender = $_POST['gender'];
-    $description = $_POST['description'];
+    $description = clean($_POST['description']);
     $picter = $_FILES['picter']['name'];
 
     if (estValideName($firstName)) {
@@ -36,9 +36,10 @@ if (isset($_POST['create'])) {
                 $sql = 'SELECT email FROM user WHERE email = ?';
                 $requet = $db->prepare($sql);
                 $requet->execute(array($email));
-                $donnee = $requet->fetch();
+                $data = $requet->fetch();
 
-                if ($donnee < 1) {
+                // test if there is no email like that in the database :
+                if ($data < 1) {
 
                     // insert data user into the database :
                     $sql = 'INSERT INTO user(

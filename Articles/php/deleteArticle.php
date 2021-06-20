@@ -3,6 +3,9 @@ session_start();
 if(!isset($_SESSION['userId'])) {
     header('Location: /Jarida/User/php/profile.php'); 
 }
+
+echo '<script>Welcome to delete article</script>';
+
 //connexion
 require '../../All/db/connexion.php';
 $db = connecteMyDb();

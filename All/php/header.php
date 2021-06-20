@@ -7,14 +7,40 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="stylesheet" href="/Jarida/All/css/basics.css" />
   <link rel="stylesheet" href="/Jarida/All/css/loader.css" />
   <link rel="stylesheet" href="/Jarida/All/css/header.css" />
-  <link rel="stylesheet" href="/Jarida/Home/css/slideShow.css" />
-  <link rel="stylesheet" href="/Jarida/Home/css/home.css" />
-  <link rel="stylesheet" href="/Jarida/Articles/css/article.css" />
-  <link rel="stylesheet" href="/Jarida/Articles/css/addArticle.css" />
-  <link rel="stylesheet" href="/Jarida/User/css/profile.css" />
+
+  <?php switch ($_SERVER['PHP_SELF']) {
+
+    case "/Jarida/Home/php/index.php":
+    case "/jarida/Home/php/index.php": ?>
+
+      <link rel="stylesheet" href="/Jarida/Home/css/slideShow.css" />
+      <link rel="stylesheet" href="/Jarida/Home/css/home.css" />
+
+      <?php break; ?>
+
+    <?php
+    case "/Jarida/Articles/php/journals.php": 
+    case "/Jarida/Articles/php/myArticles.php": 
+    case "/Jarida/Articles/php/addArticle.php": ?>
+
+      <link rel="stylesheet" href="/Jarida/Articles/css/article.css" />
+      <link rel="stylesheet" href="/Jarida/Articles/css/addArticle.css" />
+      <link rel="stylesheet" href="/Jarida/Articles/css/confirmation.css" />
+      <?php break; ?>
+
+    <?php
+    case "/Jarida/User/php/profile.php": ?>
+
+      <link rel="stylesheet" href="/Jarida/User/css/profile.css" />
+
+      <?php break; ?>
+
+  <?php } ?>
+
   <link rel="stylesheet" href="/Jarida/All/css/footer.css" />
   <link rel="Icon" href="../img/jarida-light.png" />
 
@@ -62,7 +88,6 @@
     </div>
 
     <i class="far fa-bell"></i>
-    <!-- <i class="fas fa-bell"></i> -->
   </header>
 
   <!-- Menu for mobile version -->

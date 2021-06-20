@@ -1,4 +1,7 @@
-<?php require('../../All/php/header.php'); ?>
+<?php
+require('../../All/php/header.php');
+require('../../Login&Register/php/functions.php');
+?>
 
 <!-- Blocking the not users to acces  -->
 <?php if (!isset($_SESSION['userId'])) : ?>
@@ -14,8 +17,8 @@ if (isset($_POST['publish'])) {
     $targetPdf =  "../pdfs/" . basename($_FILES['pdf']['name']);
 
     // init variables :
-    $title = $_POST['title'];
-    $description = $_POST['description'];
+    $title = clean($_POST['title']);
+    $description = clean($_POST['description']);
     $date = date("Y-m-d H:i:s");
     $category = $_POST['category'];
     $author = $_SESSION['userId'];

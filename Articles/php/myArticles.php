@@ -10,7 +10,7 @@
 <?php
 $userId = $_SESSION['userId'];
 // connection :
- require '../../All/db/connexion.php';
+require '../../All/db/connexion.php';
 $db = connecteMyDb();
 $sql = 'SELECT * FROM article WHERE author = ?';
 $requet = $db->prepare($sql);
@@ -22,6 +22,7 @@ if ($requet->execute(array($userId))) : ?>
     <section class="journal">
 
         <?php while ($donnee = $requet->fetch()) : ?>
+
             <article class="page">
                 <h1><?= $donnee['title'] . '<br>'; ?></h1>
                 <?= $donnee['description'] . '<br>'; ?>
@@ -31,28 +32,35 @@ if ($requet->execute(array($userId))) : ?>
                 <?= 'Author ' . $donnee['author'] . '<br>'; ?>
                 <img src="<?= '../images/' . $donnee['image'] ?>" alt="<?= $donnee['image']; ?>">
 
-                <!-- If The online user was the owner of article -->
-                <?php
-                if (isset($_SESSION['userId'])) {
-                    if ($_SESSION['userId'] == $donnee['author']) {
-                        // share the id of the article using url
-                        echo  '<a href="./deleteArticle.php?idArticle='.$donnee["id"].'"><button>Delete</button></a>';
-                    }
-                } ?>
+                <button onclick="confirm(<?= $donnee['id'] ?>)">Delete</button>
 
             </article><br>
+
         <?php endwhile; ?>
 
     </section>
 
     <!-- ===== End Articles ===== -->
-    <br><br>
 
 <?php else : ?>
 
-<script>alert("Hello")</script>
+    <script>
+        alert("Something Wrong");
+    </script>
 
 <?php endif; ?>
 
+<form class="confirmation" style="display: none;" action="deleteArticle.php">
+
+<div>
+<input type="text" id="idArticle" name="idArticle">
+<p> Are you sure ? you want to delete this article</p> <br>
+<button type="submit" name="confirmation">Sure</button>
+<button type="button" onClick="hideConfirm()">Not Sure</button>
+</div>
+
+</form>
+
+<br><br>
 <!-- ===== Footer ===== -->
 <?php require('../../All/php/footer.php'); ?>

@@ -57,6 +57,7 @@
   
   .bar-search i {
     color: var(--color-dark);
+    cursor: pointer;
   }
   
   .bar-search input[type="search"] {
@@ -89,7 +90,7 @@
       justify-content: center;
     }
     #main-vid form {
-      display: none;
+      display: flex;
     }
   
     #main-vid p {
