@@ -14,7 +14,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: var(--bg-primary-dark);
+    background-color: var(--video-blend-color);
     width: 100vw;
     height: 99.5%;
     mix-blend-mode: multiply;
@@ -71,7 +71,7 @@
   }
   
   #search {
-    background-color: var(--bg-light);
+    background-color: var(--search-button-bg-color);
     padding: 0.9em;
     width: 6em;
     border: none;
@@ -80,8 +80,8 @@
   }
   
   #search:hover {
-    background-color: var(--color-secondry-light);
-    /* color: var(--wtb-color-l9); */
+    background-color: var(--search-button-hover-bg-color);
+    color: var(--search-button-hover-color);
   }
   
   @media (max-width: 50em) {

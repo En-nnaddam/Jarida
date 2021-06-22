@@ -8,7 +8,7 @@ require('../../Login&Register/php/functions.php');
     <script>
         location.replace("/jarida/Home/php/index.php");
     </script>
-<?php endif; ?> <br><br>
+<?php endif; ?>
 
 <?php
 if (isset($_POST['publish'])) {

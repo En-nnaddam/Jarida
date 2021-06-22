@@ -50,7 +50,7 @@ if ($requet->execute(array($userId))) : ?>
 
 <?php endif; ?>
 
-<form class="confirmation" style="display: none;" action="deleteArticle.php">
+<form class="confirmation" style="display: none;" action="deleteArticle.php" method="post">
 
 <div>
 <input type="text" id="idArticle" name="idArticle">

@@ -1,5 +1,18 @@
 <?php session_start(); ?>
 
+<?php function isUserDo()
+{
+  if (
+    ($_SERVER['PHP_SELF'] == '/Jarida/User/php/profile.php') ||
+    ($_SERVER['PHP_SELF'] == '/Jarida/User/php/editProfile.php') ||
+    ($_SERVER['PHP_SELF'] == '/Jarida/Articles/php/addArticle.php') ||
+    ($_SERVER['PHP_SELF'] == '/Jarida/Articles/php/myArticles.php')
+  ) return true;
+
+  else return false;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,19 +36,25 @@
       <?php break; ?>
 
     <?php
-    case "/Jarida/Articles/php/journals.php": 
-    case "/Jarida/Articles/php/myArticles.php": 
+    case "/Jarida/Articles/php/journals.php":
+    case "/Jarida/Articles/php/myArticles.php":
     case "/Jarida/Articles/php/addArticle.php": ?>
 
       <link rel="stylesheet" href="/Jarida/Articles/css/article.css" />
       <link rel="stylesheet" href="/Jarida/Articles/css/addArticle.css" />
       <link rel="stylesheet" href="/Jarida/Articles/css/confirmation.css" />
+      <link rel="stylesheet" href="/Jarida/User/css/navigProfile.css" />
+      <?php include('../../User/php/profile.css.php'); ?>
+
       <?php break; ?>
 
     <?php
-    case "/Jarida/User/php/profile.php": ?>
+    case "/Jarida/User/php/profile.php":
+    case " ": ?>
 
+      <link rel="stylesheet" href="/Jarida/User/css/navigProfile.css" />
       <link rel="stylesheet" href="/Jarida/User/css/profile.css" />
+      <?php include('../../User/php/profile.css.php'); ?>
 
       <?php break; ?>
 
@@ -54,41 +73,54 @@
   <div class="loader">
     <div class="loader-container">
       <img src="/Jarida/All/img/jarida-stroke.png" alt="Jarida Logo Stroke">
-      <img src="/Jarida/All/img/jarida-light.png" alt="Jarida Logo Orange">
+      <img src="/Jarida/All/img/jarida-red.png" alt="Jarida Logo Orange">
       <img src="/Jarida/All/img/Loader.png" alt="Jarida Logo Stroke">
     </div>
     <h1>Loading ...</h1>
   </div>
 
-  <header class="header-site gap" id="header">
-    <i onclick="toggleMenu()" class="fas fa-bars"></i>
+  <?php if (!isUserDo()) : ?>
 
-    <figure class="logo">
-      <div class="flex-center">
-        <img src="/Jarida/All/img/jarida-light.png" alt="Logo Jarida" onmouseover="logoHover()" onmouseout="logoOut()" />
+    <header class="flex header-site gap" id="header">
+      <i onclick="toggleMenu()" class="fas fa-bars"></i>
 
-        <figcaption>
-          <span class="arida">arida</span><br />
-          <pre>International Scientific Journal</pre>
-        </figcaption>
+      <div class="userPicter">
+
+        <?php if (isset($_SESSION['userPicter'])) : ?>
+          <a href="/Jarida/User/php/profile.php">
+            <img src="<?= '/Jarida/User/images/' . $_SESSION['userPicter'] ?>" alt="User Picter">
+          </a>
+        <?php endif; ?>
+
       </div>
-    </figure>
 
-    <div class="flex gap register">
+      <figure class="logo">
+        <div class="flex-center">
+          <img src="/Jarida/All/img/jarida-red.png" alt="Logo Jarida" onmouseover="logoHover()" onmouseout="logoOut()" />
 
-      <?php if (
-        isset($_SESSION['firstName']) &&
-        isset($_SESSION['lastName'])
-      ) : ?>
-        <a href="/Jarida/User/php/profile.php">My profile</a>
-      <?php else : ?>
-        <a href="/Jarida/Login&Register/php/login.php">Login</a>
-      <?php endif; ?>
+          <figcaption>
+            <span class="arida">arida</span><br />
+            <pre>International Scientific Journal</pre>
+          </figcaption>
+        </div>
+      </figure>
 
-    </div>
+      <div class="flex register">
 
-    <i class="far fa-bell"></i>
-  </header>
+        <?php if (
+          isset($_SESSION['firstName']) &&
+          isset($_SESSION['lastName'])
+        ) : ?>
+          <a href="/Jarida/User/php/profile.php">My profile</a>
+        <?php else : ?>
+          <a href="/Jarida/Login&Register/php/login.php">Login</a>
+        <?php endif; ?>
+
+      </div>
+
+      <i class="far fa-bell"></i>
+    </header>
+  <?php endif; ?>
 
   <!-- Menu for mobile version -->
 
@@ -148,3 +180,15 @@
     </ul>
   </nav>
   <!-- ===== End  navigation ===== -->
+
+  <!-- ===== Navigation User profile ===== -->
+  <?php
+  if (isUserDo()) {
+    try {
+      require('../../User/php/navigProfile.php');
+    } catch (Exception $e) {
+      echo 'Erreur : ' . $e->getMessage();
+    }
+  }
+  ?>
+  <!-- ===== End Navigation User profile ===== -->

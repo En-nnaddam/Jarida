@@ -3,9 +3,25 @@
 
     function getInfoUser($data) {
         $_SESSION['userId'] = $data['id'];
-        $_SESSION['userPicter'] = $data['picter'];
+
+        if($data['picter']) {
+            $_SESSION['userPicter'] = $data['picter'];
+        } else {
+            if($data['gender'] == 'Male')
+                $_SESSION['userPicter'] = 'maleUserImageDefault.jpg';
+            else
+                $_SESSION['userPicter'] = 'femaleUserImageDefault.jpg';
+        }
+        
         $_SESSION['firstName'] = $data['firstName'];
         $_SESSION['lastName'] = $data['lastName'];
+
+        if($data['description']) {
+            $_SESSION['description'] = $data['description'];
+        } else {
+            $_SESSION['description'] = "Hi! My name is ".$data['firstName'].", I'm a creative designer and developer at TemPlaza. I enjoy creating eye candy solutions for web and mobile applications. I'd love to work on yours, too :)";
+        }
+        	
     } 
 
     if(isset($_POST['login'])) {

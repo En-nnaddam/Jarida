@@ -1,3 +1,8 @@
+<!-- Blocking who is already connected -->
+<?php if(isset($_SESSION['userId']))
+  header('Location: /Jarida/Home/php/index.php');
+?>
+
 <?php require('confirmlogin.php') ?>
 
 <!DOCTYPE html>
@@ -15,12 +20,12 @@
   <body>
     <div class="login-container flex-center">
         
-      <main class="flex-column">
+      <main class="flex-column gap">
           
         <a href="/Jarida/Home/php/index.php">
           <figure class="logo" onmouseover="logoHover()" onmouseout="logoOut()">
             <div class="flex-center">
-              <img src="/Jarida/All/img/jarida-light.png" alt="Logo Jarida"/>
+              <img src="/Jarida/All/img/jarida-red.png" alt="Logo Jarida"/>
                 
               <figcaption>
                 <span class="arida">arida</span><br />
@@ -40,6 +45,7 @@
             <a href="./register.php">Create an account</a>
           </p>
         </form>
+        
       </main>
       <ul class="bg-bubbles">
         <li></li>

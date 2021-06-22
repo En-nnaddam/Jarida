@@ -1,26 +1,56 @@
 :root {
   /* palette 3 */
-  --color-primary-light: #606c38;
+  /* --color-primary-light: #606c38;
   --color-primary-dark: #283618;
   --color-light: #f8f9fa;
   --color-dark: #212529;
   --color-secondry-light: #dda15e;
-  --color-secondry-dark: #bc6c25;
-/* 
-  --color-primary-light: #dda15e;
-  --color-primary-dark: #bc6c25;
-  --color-light: #fefae0;
-  --color-dark: #212529;
-  --color-secondry-light: #606c38;
-  --color-secondry-dark: #283618; */
+  --color-secondry-dark: #bc6c25; */
 
-  --bg-primary-light: var(--color-primary-light);
-  --bg-primary-dark: var(--color-primary-dark);
-  --bg-light: var(--color-light);
-  --bg-dark: var(var(--color-dark));
-  --bg-secondry-light: var(--color-secondry-light);
-  --bg-secondry-dark: var(--color-secondry-dark);
-  
+  --main-color-0: #571089;
+  --main-color-1: #022b3a;
+  --main-color-2: #1f7a8c;
+  --color-light: #fffcf2;
+  --color-dark: #252422;
+  --main-color-3: #bfdbf7;
+  --main-color-4: #e1e5f2;
+
+  --main-color-5: #c1121f;
+  --main-color-6: #252422;
+  --main-color-7: #403d39;
+  --main-color-8: #ccc5b9;
+  --main-color-9: #ffb703;
+
+  /* ===== Home page ===== */
+  --header-bg-color : var(--color-light);
+  --logo-text-color : var(--main-color-1);
+  --logo-arida-color : var(--main-color-5);
+
+  --link-button-color: var(--main-color-6);
+  --link-button-hover-color: var(--color-light);
+  --link-button-hover-bg-color: var(--main-color-1);
+  --link-button-hover-gradient-bg-color: linear-gradient(90deg, var(--main-color-5) 0%, var(--main-color-2) 100%);
+
+  --navigation-bg-color : var(--main-color-5);
+  --navigation-gradient-bg-color : linear-gradient(90deg, var(--main-color-5) 0%, var(--main-color-2) 100%);
+
+  --categorie-bg-color : var(--color-light);
+  --categorie-options-bg-color : var(--main-color-5);
+  --categorie-options-gradient-bg-color : linear-gradient(125deg, var(--main-color-5) 0%, var(--main-color-2) 100%);
+  --categorie-options-hover-bg-color : var(--main-color-1);
+  --scroll-categorie-options-bg-color : var(--color-light);
+  --scroll-thumb-categorie-options-bg-color : var(--main-color-1);
+
+  --video-blend-color : var(--main-color-7);
+
+  --search-button-bg-color : var(--color-light);
+  --search-button-hover-bg-color : var(--main-color-5);
+  --search-button-hover-color : var(--color-light);
+
+  /* Profile colors */
+  --link-profile-bg-color: -webkit-linear-gradient(0deg, var(--main-color-5), var(--main-color-2));
+  --link-profile-color: var(--main-color-6);  
+
 }
 
 * {
@@ -41,6 +71,7 @@ body {
 
 body {
   overflow-x: hidden;
+  background: var(--color-light);
 }
 
 .gap {

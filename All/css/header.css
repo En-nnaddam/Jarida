@@ -1,7 +1,8 @@
 /* ===== header du site ===== */
 .header-site {
-  background-color: var(--bg-primary-dark);
-  padding: 1em 2em;
+  position: relative;
+  background-color: var(--header-bg-color);
+  padding: 1.5em 2em;
   width: 100vw;
 }
 
@@ -13,15 +14,23 @@
   cursor: pointer;
 }
 
-.header-site .register {
-  justify-content: flex-end;
+.header-site .userPicter img{
+  width: 5em;
+  border-radius: 50%;
 }
 
-.header-site a {
+.header-site .register {
+  position: absolute;
+  top: 50%;
+  right: 2em;
+  transform: translateY(-50%);
+}
+
+.header-site .register a {
   background-color: transparent;
-  border: 0.1em solid var(--color-light);
+  border: 0.1em solid ;
   border-radius: 0.2em;
-  color: var(--color-light);
+  color: var(--link-button-color);
 
   height: max-content;
   padding: 1em 2em;
@@ -29,20 +38,23 @@
   text-decoration: none;
 }
 
-.header-site a:hover {
-  background-color: var(--bg-primary-light);
+.header-site .register a:hover {
+  background: var(--link-button-hover-bg-color);
+  background: var(--link-button-hover-gradient-bg-color);
+
+  color: var(--link-button-hover-color);
 }
 
 /* ===== Logo ===== */
 
 .logo {
   padding-inline: 2em;
+  margin-inline: auto;
 }
 
 .logo:hover {
   transition: 2s;
-  filter: invert(50%) sepia(22%) saturate(6997%) hue-rotate(344deg)
-    brightness(102%) contrast(97%);
+  filter: invert(50%) sepia(50%) saturate(7550%) hue-rotate(360deg) brightness(92%) contrast(95%);
 }
 
 .logo img {
@@ -56,12 +68,12 @@
 }
 
 .logo span {
-  color: rgb(248, 150, 58);
+  color: var(--logo-arida-color);
   transition: 1s;
 }
 
 .logo pre {
-  color: var(--color-light);
+  color: var(--logo-text-color);
 }
 
 @media (max-width: 50em) {
@@ -75,6 +87,7 @@
   {
     display: block;
     width: 25%;
+    color: var(--logo-text-color);
   }
 
   .header-site i:last-child {
@@ -115,7 +128,7 @@
       padding-inline: 1em;
       text-align: center;
       /* display: none; */
-      background-color: var(--bg-primary-dark);
+      background-color: var(--navigation-bg-color);
     }
 
     .navmobile a {  
@@ -142,7 +155,8 @@
 .navsite {
   padding: 1em 0em;
   width: 100vw;
-  background-color: var(--bg-primary-light);
+  background-color: var(--navigation-bg-color);
+  background: linear-gradient(90deg, rgba(193,18,31,1) 0%, rgba(31,122,140,1) 100%);
   position: sticky;
   top: 0;
   z-index: 2;
@@ -202,7 +216,8 @@
 }
 
 .select-box .options-container {
-  background-color: var(--bg-primary-light);
+  background: var(--categorie-options-gradient-bg-color);
+  /* backdrop-filter: blur(10px); */
   color: var(--color-light);
   max-height: 0;
   width: 100%;
@@ -221,7 +236,7 @@
 }
 
 .selected {
-  background-color: var(--bg-light);
+  background-color: var(--categorie-bg-color);
   color: var(--color-dark);
   border-radius: 0.8rem;
   position: relative;
@@ -231,18 +246,18 @@
 
 .selected::before {
   content: "";
-  background: url("../icon/list.svg");
-
-  filter: invert(54%) sepia(5%) saturate(8%) hue-rotate(319deg) brightness(91%)
-    contrast(86%);
+  background: url("../img/jarida-red.png");
 
   background-repeat: no-repeat;
   background-size: contain;
 
   position: absolute;
   height: 100%;
-  width: 1.2rem;
+  width: 0.8rem;
   left: 1em;
+  /* center the logo image */
+  top: 50%;
+  transform: translateY(-35%);
 }
 
 .selected::after {
@@ -276,12 +291,12 @@
 
 .select-box .options-container::-webkit-scrollbar {
   width: 0.8rem;
-  background-color: var(--bg-light);
+  background-color: var(--scroll-categorie-options-bg-color);
   border-radius: 0 0.8rem 0.8rem 0;
 }
 
 .select-box .options-container::-webkit-scrollbar-thumb {
-  background-color: var(--bg-primary-dark);
+  background-color: var(--scroll-thumb-categorie-options-bg-color);
   border-radius: 0 0.8rem 0.8rem 0;
 }
 
@@ -292,7 +307,7 @@
 }
 
 .select-box .option:hover {
-  background-color: var(--bg-primary-dark);
+  background-color: var(--categorie-options-hover-bg-color);
 }
 
 .select-box label {

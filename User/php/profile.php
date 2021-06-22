@@ -5,48 +5,36 @@
     <script>
         location.replace("/jarida/Home/php/index.php");
     </script>
-<?php endif; ?> <br><br>
+<?php endif; ?>
 
-<section id="profile-user">
+<div class="userContainer">
 
-    <!-- User Picture -->
-    <?php if (isset($_SESSION['userPicter'])) : ?>
-        <img src="<?= '../images/'.$_SESSION['userPicter'] ?>" alt="User Image">
-    <?php else : ?>
-        <img src="../images/userImageDefault.png" alt="User Image Default">
-    <?php endif; ?> <br><br>
+    <section id="profile-user" class="flex">
+    
+        <!-- User Picture -->
+        <?php if (isset($_SESSION['userPicter'])) : ?>
+            <img src="<?= '../images/' . $_SESSION['userPicter'] ?>" alt="User Image">
+        <?php endif; ?> <br><br>
+    
+        <div class="userInfos flex-column gap">
+    
+            <?php if (
+                isset($_SESSION['firstName']) &&
+                isset($_SESSION['lastName'])
+            ) : ?>
+                <h1> <?= $_SESSION['firstName'] . ' ' . $_SESSION['lastName'] ?> </h1>
+            <?php endif; ?>
+    
+            <?php if (isset($_SESSION['description'])) : ?>
+                <div><?= $_SESSION['description'] ?></div>
+            <?php endif; ?>
+    
+        </div>
+    
+    </section>
 
+</div>
 
-    <?php if (
-        isset($_SESSION['firstName']) &&
-        isset($_SESSION['lastName'])
-    ) : ?>
-        <h1> <?= $_SESSION['firstName'] . ' ' . $_SESSION['lastName'] ?> </h1>
-    <?php endif; ?> <br>
-
-    <?php if (isset($_SESSION['description'])) : ?>
-        <div><?= $_SESSION['description'] ?></div>
-    <?php endif; ?>
-
-    <a href="./logout.php"><button>Logout</button></a>
-
-    <br><br>
-    <!-- Add article -->
-    <a href="/Jarida/Articles/php/addArticle.php"><button>Add Article</button></a>
-
-    <br><br>
-
-    <!-- Users Articles articles -->
-    <a href="../../Articles/php/myArticles.php"><button>My artciles</button></a>
-
-    <br><br>
-
-    <!-- Edit profile -->
-    <a href="./editProfile.php"><button>Edit Profile</button></a>
-
-    <br><br>
-
-</section>
 
 <br><br>
 
