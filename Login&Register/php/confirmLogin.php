@@ -1,29 +1,7 @@
 <?php
     session_start();
-
-    function getInfoUser($data) {
-        $_SESSION['userId'] = $data['id'];
-
-        if($data['picter']) {
-            $_SESSION['userPicter'] = $data['picter'];
-        } else {
-            if($data['gender'] == 'Male')
-                $_SESSION['userPicter'] = 'maleUserImageDefault.jpg';
-            else
-                $_SESSION['userPicter'] = 'femaleUserImageDefault.jpg';
-        }
-        
-        $_SESSION['firstName'] = $data['firstName'];
-        $_SESSION['lastName'] = $data['lastName'];
-
-        if($data['description']) {
-            $_SESSION['description'] = $data['description'];
-        } else {
-            $_SESSION['description'] = "Hi! My name is ".$data['firstName'].", I'm a creative designer and developer at TemPlaza. I enjoy creating eye candy solutions for web and mobile applications. I'd love to work on yours, too :)";
-        }
-        	
-    } 
-
+    require('../../User/php/userFunctions.php');
+    
     if(isset($_POST['login'])) {
         // to connect with data base: 
         require_once('../../All/db/connexion.php');
@@ -43,6 +21,20 @@
             if($data['password'] == $password) {
 
                 getInfoUser($data);
+
+                if($data['author']){
+                    
+                    $sql = 'SELECT * FROM author WHERE userId = ?';
+                    $requet = $db->prepare($sql);
+                    $requet->execute(array($data['id']));
+                    $dataAuthor = $requet->fetch();
+
+                   if($dataAuthor)
+                       getInfoAuthor($dataAuthor);
+                    else 
+                    echo '<script> alert(\'Something wrong with dataAuthor\') </script>';
+                } 
+
                 header("Location: /Jarida/Home/php/index.php");
 
             } else {

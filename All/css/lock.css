@@ -1,0 +1,28 @@
+.lock {
+  text-align: center;
+  align-items: center;
+  gap: 2em;
+}
+
+.lock img {
+  width: 10em;
+}
+
+.lock a {
+  background-color: transparent;
+  border: 0.1em solid;
+  border-radius: 0.2em;
+  color: var(--link-button-color);
+
+  height: max-content;
+  padding: 1em 2em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.lock a:hover {
+  background: var(--link-button-hover-bg-color);
+  background: var(--link-button-hover-gradient-bg-color);
+
+  color: var(--link-button-hover-color);
+}

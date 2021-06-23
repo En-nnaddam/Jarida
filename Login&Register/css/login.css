@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300);
 .login-container {
   font-family: "Source Sans Pro", sans-serif;
-  height: 100vh;
+  min-height: 100%;
   width: 100vw;
   background-color: var(--bg-primary-dark);
   /* overflow: hidden; */
@@ -9,7 +9,7 @@
 
 .login-container main {
   color: var(--color-light);
-  min-height: 60vh;
+  min-height: 100vh;
   width: 100vw;
   margin-block: auto;
   padding-block: 3em;
@@ -225,20 +225,9 @@
 /* ===== Register form ===== */
 
 .register-container {
-  max-height: 15em;
-  overflow-y: scroll;
+  width: 45em;
 }
 
-.register-container::-webkit-scrollbar {
-  background-color: var(--main-color-7);
-  border-radius: 1em;
-  width: 0.3em;
-}
-
-.register-container::-webkit-scrollbar-thumb {
-  background-color: var(--main-color-8);
-  border-radius: 1em;
-}
 
 /* ===== End Register form ===== */
 .bg-bubbles {

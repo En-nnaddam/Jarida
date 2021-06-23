@@ -1,5 +1,5 @@
 <!-- Blocking who is already connected -->
-<?php if(isset($_SESSION['userId']))
+<?php if (isset($_SESSION['userId']))
   header('Location: /Jarida/Home/php/index.php');
 ?>
 
@@ -50,6 +50,7 @@
           <?php endif; ?>
 
           <input type="email" placeholder="E-mail" name="email" <?php if (isset($_POST['email'])) : ?> value="<?= $_POST['email'] ?>" <?php endif ?> required />
+
           <input type="password" onpaste="return false;" minlength="8" maxlength="16" placeholder="Password" name="password" <?php if (isset($_POST['password'])) : ?> value="<?= $_POST['password'] ?>" <?php endif ?> required />
           <input type="password" onpaste="return false;" minlength="8" maxlength="16" placeholder="Confirm Password" name="confirmPassword" <?php if (isset($_POST['confirmPassword'])) : ?> value="<?= $_POST['confirmPassword'] ?>" <?php endif ?> required />
 
@@ -58,9 +59,22 @@
             <option value="Female">Female</option>
           </select>
 
-          <input type="file" name="picter" accept="image/png, image/jpeg" />
+          <input type="file" name="picture" accept="image/png, image/jpeg" />
           <textarea name="description" cols="38" rows="10" placeholder="You can describe yourself here."></textarea>
-          <input type="submit" value="Create" name="create" />
+          <label for="isAuthor">
+            Do you want to be an author,
+            to upload your own Articles and more other things ?
+          </label>
+          <input onclick="toggleAuthorInfo()" type="checkbox" name="author" id="isAuthor">
+
+          <!-- ===== for author only ===== -->
+          <input type="text" name="nationality" class="authorInfo" placeholder="Nationality" <?php if (!empty($nationality)) :  ?> value="<?= $nationality ?>" <?php endif ?>>
+
+          <input type="text" name="speciality" class="authorInfo" placeholder="Speciality" <?php if (!empty($speciality)) :  ?> value="<?= $speciality ?>" <?php endif ?>>
+
+          <input type="text" name="degree" class="authorInfo" placeholder="Degree" <?php if (!empty($degree)) :  ?> value="<?= $degree ?>" <?php endif ?>>
+
+          <input onclick="toggleAuthorInfo()" type="submit" value="Create" name="create" />
 
         </form>
 
@@ -88,6 +102,7 @@
   </div>
 
   <script src="/Jarida/All/js/logo.js"></script>
+  <script src="/Jarida/Login&Register/js/register.js"></script>
 </body>
 
 </html>

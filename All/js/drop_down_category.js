@@ -14,5 +14,3 @@ optionsList.forEach( option => {
         optionsContainer.classList.remove("active");
     })
 });
-
-

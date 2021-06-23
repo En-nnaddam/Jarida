@@ -12,12 +12,12 @@
         <p>
           Get Real time notifications of science, space and technology&nbsp;! Stay Tuned 
         </p>
-        <form action="./search.php" method="POST" class="flex-center gap">
+        <form action="./search.php" class="flex-center gap">
           <div class="flex-center bar-search gap">
             <label for="search"><i class="fas fa-search"></i></label>
             <input
               type="search"
-              name="produit"
+              name="article"
               placeholder="Search Products"
             />
           </div>

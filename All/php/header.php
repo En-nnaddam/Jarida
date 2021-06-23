@@ -38,6 +38,7 @@
     <?php
     case "/Jarida/Articles/php/journals.php":
     case "/Jarida/Articles/php/myArticles.php":
+    case "/Jarida/Home/php/search.php":
     case "/Jarida/Articles/php/addArticle.php": ?>
 
       <link rel="stylesheet" href="/Jarida/Articles/css/article.css" />
@@ -45,6 +46,7 @@
       <link rel="stylesheet" href="/Jarida/Articles/css/confirmation.css" />
       <link rel="stylesheet" href="/Jarida/User/css/navigProfile.css" />
       <?php include('../../User/php/profile.css.php'); ?>
+      <link rel="stylesheet" href="/Jarida/All/css/lock.css">
 
       <?php break; ?>
 

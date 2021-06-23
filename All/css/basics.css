@@ -22,35 +22,50 @@
   --main-color-9: #ffb703;
 
   /* ===== Home page ===== */
-  --header-bg-color : var(--color-light);
-  --logo-text-color : var(--main-color-1);
-  --logo-arida-color : var(--main-color-5);
+  --header-bg-color: var(--color-light);
+  --logo-text-color: var(--main-color-1);
+  --logo-arida-color: var(--main-color-5);
 
   --link-button-color: var(--main-color-6);
   --link-button-hover-color: var(--color-light);
   --link-button-hover-bg-color: var(--main-color-1);
-  --link-button-hover-gradient-bg-color: linear-gradient(90deg, var(--main-color-5) 0%, var(--main-color-2) 100%);
+  --link-button-hover-gradient-bg-color: linear-gradient(
+    90deg,
+    var(--main-color-5) 0%,
+    var(--main-color-2) 100%
+  );
 
-  --navigation-bg-color : var(--main-color-5);
-  --navigation-gradient-bg-color : linear-gradient(90deg, var(--main-color-5) 0%, var(--main-color-2) 100%);
+  --navigation-bg-color: var(--main-color-5);
+  --navigation-gradient-bg-color: linear-gradient(
+    90deg,
+    var(--main-color-5) 0%,
+    var(--main-color-2) 100%
+  );
 
-  --categorie-bg-color : var(--color-light);
-  --categorie-options-bg-color : var(--main-color-5);
-  --categorie-options-gradient-bg-color : linear-gradient(125deg, var(--main-color-5) 0%, var(--main-color-2) 100%);
-  --categorie-options-hover-bg-color : var(--main-color-1);
-  --scroll-categorie-options-bg-color : var(--color-light);
-  --scroll-thumb-categorie-options-bg-color : var(--main-color-1);
+  --categorie-bg-color: var(--color-light);
+  --categorie-options-bg-color: var(--main-color-5);
+  --categorie-options-gradient-bg-color: linear-gradient(
+    125deg,
+    var(--main-color-5) 0%,
+    var(--main-color-2) 100%
+  );
+  --categorie-options-hover-bg-color: var(--main-color-1);
+  --scroll-categorie-options-bg-color: var(--color-light);
+  --scroll-thumb-categorie-options-bg-color: var(--main-color-1);
 
-  --video-blend-color : var(--main-color-7);
+  --video-blend-color: var(--main-color-7);
 
-  --search-button-bg-color : var(--color-light);
-  --search-button-hover-bg-color : var(--main-color-5);
-  --search-button-hover-color : var(--color-light);
+  --search-button-bg-color: var(--color-light);
+  --search-button-hover-bg-color: var(--main-color-5);
+  --search-button-hover-color: var(--color-light);
 
   /* Profile colors */
-  --link-profile-bg-color: -webkit-linear-gradient(0deg, var(--main-color-5), var(--main-color-2));
-  --link-profile-color: var(--main-color-6);  
-
+  --link-profile-bg-color: -webkit-linear-gradient(
+    0deg,
+    var(--main-color-5),
+    var(--main-color-2)
+  );
+  --link-profile-color: var(--main-color-6);
 }
 
 * {
@@ -91,4 +106,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.btn {
+  background-color: transparent;
+  border: 0.1em solid;
+  border-radius: 0.2em;
+  color: var(--link-button-color);
+
+  height: max-content;
+  padding: 1em 2em;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: var(--link-button-hover-bg-color);
+  background: var(--link-button-hover-gradient-bg-color);
+
+  color: var(--link-button-hover-color);
 }

@@ -1,11 +1,8 @@
 <?php require('../../All/php/header.php'); ?>
+<?php require_once('../../User/php/userFunctions.php'); ?>
 
 <!-- Blocking the not users to acces  -->
-<?php if (!isset($_SESSION['userId'])) : ?>
-    <script>
-        location.replace("/jarida/Home/php/index.php");
-    </script>
-<?php endif; ?>
+<?php blockNoUser(); ?>
 
 <div class="userContainer">
 

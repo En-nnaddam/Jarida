@@ -1,12 +1,14 @@
 <?php require('../../All/php/header.php'); ?>
+<!-- include the loadArticles function -->
+<?php require_once('../../All/php/articleFunctions.php'); ?>
+
+<?php require_once('../../User/php/userFunctions.php'); ?>
 
 <!-- Blocking the not users to acces  -->
-<?php if (!isset($_SESSION['userId'])) : ?>
-    <script>
-        location.replace("/jarida/Home/php/index.php");
-    </script>
-<?php endif; ?> <br><br>
+<?php blockNoUser(); ?>
 
+<!-- accessibility only for authors -->
+<?php if($_SESSION['author']): ?>
 <?php
 $userId = $_SESSION['userId'];
 // connection :
@@ -16,31 +18,7 @@ $sql = 'SELECT * FROM article WHERE author = ?';
 $requet = $db->prepare($sql);
 if ($requet->execute(array($userId))) : ?>
 
-    <br><br>
-
-    <!-- ===== Articles ===== -->
-    <section class="journal">
-
-        <?php while ($donnee = $requet->fetch()) : ?>
-
-            <article class="page">
-                <h1><?= $donnee['title'] . '<br>'; ?></h1>
-                <?= $donnee['description'] . '<br>'; ?>
-                <?= $donnee['date'] . '<br>'; ?>
-                <?= 'Note ' . $donnee['note'] . '<br>'; ?>
-                <?= $donnee['category'] . '<br>'; ?>
-                <?= 'Author ' . $donnee['author'] . '<br>'; ?>
-                <img src="<?= '../images/' . $donnee['image'] ?>" alt="<?= $donnee['image']; ?>">
-
-                <button onclick="confirm(<?= $donnee['id'] ?>)">Delete</button>
-
-            </article><br>
-
-        <?php endwhile; ?>
-
-    </section>
-
-    <!-- ===== End Articles ===== -->
+    <?php loadArticles($requet); ?>
 
 <?php else : ?>
 
@@ -60,6 +38,12 @@ if ($requet->execute(array($userId))) : ?>
 </div>
 
 </form>
+
+<?php else: ?>
+
+    <?php include('../../All/php/lock.html.php'); ?>
+
+<?php endif ?>
 
 <br><br>
 <!-- ===== Footer ===== -->

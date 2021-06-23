@@ -17,3 +17,4 @@ function clean($data)
     $data = trim($data);
     return $data;
 }
+

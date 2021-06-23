@@ -63,3 +63,6 @@
     - Add remove article feature.
 
     - Two bugs appeared : in delete and in add.
+
+# Want to verificate validation email : 
+    https://stackoverflow.com/questions/12026842/how-to-validate-an-email-address-in-php
