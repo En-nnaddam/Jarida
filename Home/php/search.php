@@ -15,7 +15,7 @@ if (isset($_GET['search'])) {
 
 <?php if ($reponse) : ?>
 
-<?php  loadArticles($reponse, '../../Articles/images/'); ?>
+<?php  loadArticles($reponse, '../../Articles/images/', '../../Articles/pdfs/'); ?>
 
 <?php endif;
 } ?>

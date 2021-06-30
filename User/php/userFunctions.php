@@ -18,7 +18,7 @@ function getInfoUser($data) {
     if($data['description']) {
         $_SESSION['description'] = $data['description'];
     } else {
-        $_SESSION['description'] = "Hi! My name is ".$data['firstName'].", I'm a creative designer and developer at TemPlaza. I enjoy creating eye candy solutions for web and mobile applications. I'd love to work on yours, too :)";
+        $_SESSION['description'] = "Hi! My name is ".$data['firstName'].", I'm a creative designer and developer at TemPlaza. I enjoy creating eye candy solutions for web and mobile applications.";
     }
 
     $_SESSION['author'] = $data['author'];

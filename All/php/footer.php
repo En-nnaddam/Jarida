@@ -75,11 +75,11 @@
   <?php case "/Jarida/Articles/php/myArticles.php": ?>
 
     <script src="/Jarida/Articles/js/confirmation.js"></script>
+    <script src="/Jarida/Articles/js/articleNote.js"></script>
 
     <?php break; ?>
 
 <?php } ?>
-
 
 <script src="/Jarida/All/js/menu.js"></script>
 <script src="/Jarida/All/js/accordion.js"></script>

@@ -166,7 +166,7 @@
             </div>
             <div class="option">
               <input type="radio" name="produit" value="Accessoires" id="Accessoires" class="radio" />
-              <label for="Accessoires">Social Sciences</label>
+              <label for="Accessoires">Education Sciences</label>
             </div>
 
           </div>
@@ -181,7 +181,7 @@
 
     </ul>
   </nav>
-  <!-- ===== End  navigation ===== -->
+  <!-- ===== End navigation ===== -->
 
   <!-- ===== Navigation User profile ===== -->
   <?php

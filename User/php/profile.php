@@ -9,7 +9,7 @@
     <section id="profile-user" class="flex">
     
         <!-- User Picture -->
-        <?php if (isset($_SESSION['userPicter'])) : ?>
+        <?php if(isset($_SESSION['userPicter'])) : ?>
             <img src="<?= '../images/' . $_SESSION['userPicter'] ?>" alt="User Image">
         <?php endif; ?> <br><br>
     
@@ -23,7 +23,7 @@
             <?php endif; ?>
     
             <?php if (isset($_SESSION['description'])) : ?>
-                <div><?= $_SESSION['description'] ?></div>
+                <div><q><?= $_SESSION['description'] ?></q></div>
             <?php endif; ?>
     
         </div>

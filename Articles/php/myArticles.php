@@ -16,6 +16,7 @@ require '../../All/db/connexion.php';
 $db = connecteMyDb();
 $sql = 'SELECT * FROM article WHERE author = ?';
 $requet = $db->prepare($sql);
+
 if ($requet->execute(array($userId))) : ?>
 
     <?php loadArticles($requet); ?>

@@ -1,20 +1,246 @@
 .journal {
-    width: 100vw;
-    padding:1em 2em;
-    display: grid;
-    gap: 1em;
+  margin-inline: auto;
+  background: url('../../All/img/technology-3243375_1280.jpg');
+
+  width: 80vw;
+  padding: 1em 5em;
+
+  gap: 2em;
+  box-shadow: 0em 0.1em 2em black;
+  position: relative;
 }
 
-.page {
-    padding: 1em;
-    background-color: burlywood;
+.journal::after {
+  content: "";
+  background-color: var(--journal-bg-color);
+  position: absolute;
+  inset: 0;
+  /* mix-blend-mode: overlay;
+  opacity: 0.8; */
 }
 
-.page img{
-    max-width: 20em;
-    max-height: 30em;
+.article {
+  position: relative;
+}
+.article,
+.article > * {
+  z-index: 1;
 }
 
-.page button {
-    cursor: pointer;
+.card {
+  position: relative;
+  padding: 1em;
+
+  background-color: var(--article-bg-color);
+  color: var(--color-light);
+  border-top: 0.5em solid var(--article-color);
+  z-index:1;
+  /* box-shadow: 0em 0.1em 2em var(--article-color); */
+
+  width: 25em;
+  height: 30em;
+}
+
+.card::after {
+    content: "";
+    background: -webkit-linear-gradient(bottom, rgb(0, 0, 0) 0%, transparent 60%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25em;
+    height: 30em; 
+}
+
+.card > * {
+  position: absolute;
+}
+
+.card > *:not(.card img) {
+  z-index: 1 ;
+}
+
+.card > img {
+  position: absolute;
+  width: inherit;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 25em;
+}
+
+.dateAndCategory {
+  top: 50%;
+}
+
+/* categorie article : */
+.dateAndCategory p:first-child {
+  background-color: var(--article-color);
+  padding: 0.3em 0.6em;
+  color: var(--color-dark);
+}
+
+/* date article : */
+.dateAndCategory p:last-child {
+  color: var(--color-light);
+  background-color: var(--main-color-7);
+  padding: 0.3em 0.6em;
+}
+
+/* title article : */
+.card h1 {
+  top: 60%;
+  left: 42%;
+  transform: translateX(-50%);
+  font-size: 1.8em;
+  width: 15ch;
+  text-shadow: 0em 0.1em 0.2em black;
+  opacity: 0.7;
+}
+
+/* author article */
+.card > p:nth-of-type(1) {
+  top: 90%;
+  color: var(--main-color-8);
+  opacity: 0.7;
+  transform: translateY(-15%);
+  cursor: pointer;
+}
+
+.card > p:nth-of-type(1):hover {
+  opacity: 1;
+}
+
+.card > p:nth-of-type(1) img {
+  width: 2em ;
+  border-radius: 50%;
+}
+
+/* Users panel do */
+.doPanel {
+  top: 70%;
+  right: 1em;
+  color: var(--color-light);
+}
+
+.doPanel i {
+  border: 0.1em solid black;
+  background-color: black;
+  border-radius: 50%;
+  opacity: 0.7;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+/* article Note */
+
+.doPanel > p:first-child span {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 2em;
+
+  padding: 0.1em 0.3em;
+  background-color: var(--main-color-5);
+  color: var(--color-light);
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.doPanel > p:first-child:hover span {
+  display: block;
+  
+}
+.doPanel > p:first-child.active i{
+  border: 0.1em solid var(--main-color-5);
+  background-color: var(--main-color-5);
+  opacity: 1;
+}
+
+.doPanel i:hover {
+  opacity: 1;
+}
+
+.doPanel a i {
+  color: var(--color-light);
+}
+
+/* description & comments */
+.description-comment {
+  position: absolute;
+  right: 0;
+  width: 55%;
+  height: 100%;
+}
+
+/* description article : */
+.description-article > p {
+  font-size: 1.7em;
+  padding: 1.5em 1em;
+  background-color: var(--article-bg-color);
+  color: var(--color-dark);
+  text-align: center;
+}
+
+q {
+  display: inline-block;
+}
+
+/* Comments of article */
+.comments {
+  position: relative;
+  height: 100%;
+}
+
+.comments input[type = "text"] {
+  width: 85%;
+  height: 2em;
+  padding: 0.5em;
+}
+
+.comments input[type = "submit"],
+.comments a {
+  background-color: transparent;
+  border: none;
+  color: var(--color-light);
+  cursor: pointer;
+} 
+/* Button to publish the comment */
+.comments a {
+  position: absolute;
+  right: 0;
+
+  padding: 0.22em 0.5em;
+
+  transition: background-color 0.5s;
+}
+
+.comments a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  top: 95%;
+
+  min-height: 0.2em;
+  width: 100%;
+  background-color: var(--article-color);
+
+  transition: 0.4s;
+}
+
+.comments a:hover::before{
+  top: 0;
+  min-height: 100%;
+}
+
+.comments input[type = "submit"]:hover {
+  color: var(--color-dark);
+} 
+
+/* comments display design */
+.comments p {
+  height: 100%;
+  background-color: var(--color-light);
+  color: var(--main-color-7);
+  padding: 0.5em;
 }

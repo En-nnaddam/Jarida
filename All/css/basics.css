@@ -20,6 +20,7 @@
   --main-color-7: #403d39;
   --main-color-8: #ccc5b9;
   --main-color-9: #ffb703;
+  --main-color-10: burlywood;
 
   /* ===== Home page ===== */
   --header-bg-color: var(--color-light);
@@ -66,6 +67,11 @@
     var(--main-color-2)
   );
   --link-profile-color: var(--main-color-6);
+
+  /* Artciles colors */
+  --journal-bg-color : var(--main-color-6);
+  --article-color : var(--main-color-9);
+  --article-bg-color : var(--article-color);
 }
 
 * {
