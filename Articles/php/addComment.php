@@ -21,7 +21,9 @@ if (isset($_POST["publish"])) {
         $idArticle,
         $userId
     ));
+    $db = null;
+    // Back to the previous page :
     if($requet) {
-        header('Location: ../../Articles/php/myArticles.php');
+        header("location:javascript://history.go(-1)");
     }
 }

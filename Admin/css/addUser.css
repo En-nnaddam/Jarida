@@ -1,0 +1,51 @@
+/* ===== Register form ===== */
+.register-container {
+    width: 45em;
+}
+
+.file-image::-webkit-file-upload-button {
+    display: none;
+}
+
+.file-image::before {
+    content: "Upload Image";
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    margin-right: 1em;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+    color: var(--color-dark);
+}
+
+/* .register-container {
+    backdrop-filter: blur(5px);
+    padding-inline: 2em;
+} */
+
+.register-container input,
+.register-container select {
+    padding-left: 0.2em;
+    height: 2em;
+}
+
+.register-container input[type = "checkbox"] {
+    width: 2em;
+    margin: auto;
+}
+
+.register-container input[type = 'submit'] {
+    cursor: pointer;
+}
+
+.container section {
+    padding-block : 3em !important;
+}

@@ -47,6 +47,8 @@ height: 70vh;
   top: 20%;
   transform: translateY(-20%);
   width: 34ch;
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
 }
 
 #profile-user h1 {

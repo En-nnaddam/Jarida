@@ -22,3 +22,25 @@ function isMyArticlesServer()
 {
     return isEqualServer('/Jarida/Articles/php/myArticles.php');
 }
+
+function addUserServer()
+{
+    return isEqualServer('/Jarida/Admin/php/addUser.php');
+}
+
+function adminServer()
+{
+    return isEqualServer('/Jarida/Admin/php/admin.php');
+}
+
+function publishArticleServer()
+{
+    return isEqualServer('/Jarida/Admin/php/publishArticle.php');
+}
+
+function removeUserServer()
+{
+    return isEqualServer('/Jarida/Admin/php/removeUser.php');
+}
+
+

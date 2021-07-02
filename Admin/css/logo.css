@@ -1,0 +1,31 @@
+/* ===== Logo ===== */
+
+.logo {
+    padding-inline: 2em;
+    margin-inline: auto;
+  }
+  
+  .logo:hover {
+    transition: 2s;
+    filter: invert(50%) sepia(50%) saturate(7550%) hue-rotate(360deg) brightness(92%) contrast(95%);
+  }
+  
+  .logo img {
+    width: 3rem;
+    margin-right: 0.2em;
+  }
+  
+  .logo figcaption {
+    font-size: 2em;
+    color: white;
+  }
+  
+  .logo span {
+    color: var(--logo-arida-color);
+    transition: 1s;
+  }
+  
+  .logo pre {
+    color: var(--logo-text-color);
+  }
+  

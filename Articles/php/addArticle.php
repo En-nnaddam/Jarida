@@ -71,7 +71,6 @@ if (isset($_POST['publish'])) {
     }
 } ?>
 
-<br><br>
 <?php if ($_SESSION['author']) : ?>
     <form action="" method="POST" class="flex-column" id="addArticle" enctype="multipart/form-data">
 
@@ -87,54 +86,44 @@ if (isset($_POST['publish'])) {
 
         <select name="category">
             <!-- Physical Sciences and Engineering -->
-            <option value="Chemical Engineering">Chemical Engineering</option>
             <option value="Chemistry">Chemistry</option>
             <option value="Computer">Computer</option>
             <option value="Earth & Planetary">Earth & Planetary </option>
             <option value="Energy">Energy</option>
-            <option value="Engineering">Engineering</option>
-            <option value="Materials">Materials</option>
             <option value="Mathematics">Mathematics</option>
             <option value="Physics & Astronomy">Physics & Astronomy</option>
 
             <!-- Life Sciences -->
-            <option value="Agricultural & Biological
-">Agricultural & Biological
+            <option value="Agriculture & Biology
+">Agriculture & Biology
             </option>
-            <option value="Biochemistry & Genetics">Biochemistry & Genetics
+            <option value="Biochemistry & Genetics ">Biochemistry & Genetics
             </option>
-            <option value="Environmental">Environmental
+            <option value="Environment">Environment
             </option>
-            <option value="Immunology & Microbiology">Immunology & Microbiology
+            <option value="Microbiology">Microbiology
             </option>
             <option value="Neuroscience">Neuroscience
             </option>
 
             <!-- Health Sciences -->
-            <option value="Medicine & Dentistry">Medicine & Dentistry
+            <option value="Medicine">Medicine
             </option>
-            <option value="Nursing & Health">Nursing & Health 
+            <option value="Health">Health
             </option>
-            <option value="Pharmacology">Pharmacology & Toxicology 
-            </option>
-            <option value="Veterinary">Veterinary 
+            <option value="Pharmacology">Pharmacology
             </option>
 
             <!-- Social Sciences and Humanities -->
-            <option value="Arts & Humanities">Arts & Humanities
+            <option value="Arts">Arts
             </option>
-            <option value="Business & Accounting">Business & Management 
-            </option>
-            <option value="Decision">Decision
-            </option>
-            <option value="Economics & Finance">Economics
+            <option value="Economics">Economics
             </option>
             <option value="Psychology">Psychology
             </option>
+            <option value="Humanity">Humanity
             </option>
-            <option value="Social">Social
-            </option>
-
+            
         </select><br>
         <input type="submit" name="publish" value="Publish">
 

@@ -1,0 +1,61 @@
+.container > section form {
+    width: 40em;
+}
+
+.bar-search {
+    width: 100%;
+    background-color: white;
+    padding-left: 1em;
+    height: 2.5em;
+  }
+  
+  .bar-search i {
+    color: var(--color-dark);
+    cursor: pointer;
+  }
+  
+  .bar-search input[type="search"] {
+    border: none;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .bar-search input[type="search"]:focus {
+    outline: none;
+  }
+  
+  #search {
+    background-color: var(--search-button-bg-color);
+    padding: 0.9em;
+    width: 6em;
+    border: none;
+    color: var(--color-dark);
+    cursor: pointer;
+  }
+  
+  #search:hover {
+    background-color: var(--search-button-hover-bg-color);
+    color: var(--search-button-hover-color);
+  }
+
+  /* users display */
+  .displayUsers {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+  }
+  /* user infos */
+  .userInfo {
+    cursor: pointer;
+    text-align: center;
+    width: min-content;
+  }
+  .userInfo:hover{
+    background-color: orangered; 
+  }
+  
+  .userInfo > p img{
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+  }

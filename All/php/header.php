@@ -44,6 +44,7 @@
       <link rel="stylesheet" href="/Jarida/Articles/css/article.css" />
       <link rel="stylesheet" href="/Jarida/Articles/css/addArticle.css" />
       <link rel="stylesheet" href="/Jarida/Articles/css/confirmation.css" />
+      <link rel="stylesheet" href="/Jarida/Articles/css/comments.css" />
       <link rel="stylesheet" href="/Jarida/User/css/navigProfile.css" />
       <?php include('../../User/php/profile.css.php'); ?>
       <link rel="stylesheet" href="/Jarida/All/css/lock.css">

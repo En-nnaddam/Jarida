@@ -1,4 +1,5 @@
 <?php require_once('functionServer.php'); ?>
+<?php include('../../Articles/php/displayComments.php'); ?>
 
 <?php
 function getInfoAuthorById(int $id)
@@ -105,9 +106,10 @@ function getInfoAuthorById(int $id)
                         <a>
                             <input type="submit" name="publish" value="publish">
                         </a>
-                        <p>
-                            Here comments will display !
-                        </p>
+                        <!-- comments -->
+                        <div id="comments" class="flex-column gap">
+                            <?php displayComments( $donnee['id'] ); ?>
+                        </div>
                     </form>
 
                 </div>

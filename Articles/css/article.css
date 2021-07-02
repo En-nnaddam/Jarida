@@ -112,6 +112,7 @@
 
 .card > p:nth-of-type(1) img {
   width: 2em ;
+  height: 2em ;
   border-radius: 50%;
 }
 
@@ -183,64 +184,4 @@
 
 q {
   display: inline-block;
-}
-
-/* Comments of article */
-.comments {
-  position: relative;
-  height: 100%;
-}
-
-.comments input[type = "text"] {
-  width: 85%;
-  height: 2em;
-  padding: 0.5em;
-}
-
-.comments input[type = "submit"],
-.comments a {
-  background-color: transparent;
-  border: none;
-  color: var(--color-light);
-  cursor: pointer;
-} 
-/* Button to publish the comment */
-.comments a {
-  position: absolute;
-  right: 0;
-
-  padding: 0.22em 0.5em;
-
-  transition: background-color 0.5s;
-}
-
-.comments a::before {
-  content: '';
-  position: absolute;
-  right: 0;
-  z-index: -1;
-  top: 95%;
-
-  min-height: 0.2em;
-  width: 100%;
-  background-color: var(--article-color);
-
-  transition: 0.4s;
-}
-
-.comments a:hover::before{
-  top: 0;
-  min-height: 100%;
-}
-
-.comments input[type = "submit"]:hover {
-  color: var(--color-dark);
-} 
-
-/* comments display design */
-.comments p {
-  height: 100%;
-  background-color: var(--color-light);
-  color: var(--main-color-7);
-  padding: 0.5em;
 }

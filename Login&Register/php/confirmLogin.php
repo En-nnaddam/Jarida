@@ -30,7 +30,7 @@
                     $dataAuthor = $requet->fetch();
 
                    if($dataAuthor)
-                       getInfoAuthor($dataAuthor);
+                       getInfoAuthor($dataAuthor, $data['description']);
                     else 
                     echo '<script> alert(\'Something wrong with dataAuthor\') </script>';
                 } 

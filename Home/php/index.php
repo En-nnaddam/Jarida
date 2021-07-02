@@ -18,7 +18,7 @@
             <input
               type="search"
               name="article"
-              placeholder="Search Products"
+              placeholder="Search Artciles"
             />
           </div>
           <input type="submit" name="search" value="Search" id="search" />

@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Castoro:ital@0;1&display=swap");
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(187, 187, 187);
+}
+
+.container * {
+  font-family: "Castoro", serif;
+}
+
+.container > .content {
+  width: 42.7em;
+  height: 22em;
+  box-shadow: 0em 1em 2em rgb(116, 116, 116);
+  -webkit-box-reflect: below 0px linear-gradient(0deg, rgba(255, 255, 255, 0.383)  0%, transparent 50%);
+}
+
+.container > .content > p {
+  width: 100%;
+}
+/* icons besid the inputs */
+.container > .content i {
+  padding: 0.6em;
+  color: rgb(184, 184, 184);
+  background-color: rgb(233, 233, 233);
+  border: 1px solid rgb(184, 184, 184);
+  cursor: pointer;
+}
+
+.container > .content > form {
+  width: 100%;
+  padding: 3em 1.5em;
+  background-color: rgb(255, 255, 255);
+}
+
+/* user name and password */
+.container > .content input[type="text"],
+.container > .content input[type="password"] {
+  width: 100%;
+}
+
+.container > .content input[type="text"],
+.container > .content input[type="password"] {
+  border-radius: 0;
+  outline: none;
+  border: 1px solid rgb(184, 184, 184);
+  border-left: none;
+  padding: 0.5em;
+}
+/* button submit : */
+.container > .content input[type="submit"] {
+  width: max-content;
+  padding: 0.6em 3.3em;
+  align-self: flex-end;
+
+  background-color: rgb(80, 80, 80);
+  color: rgb(233, 233, 233);
+
+  border-radius: 0.3em;
+  border: none;
+  cursor: pointer;
+}
+
+/* image login admin : */
+.container > .content > img {
+  width: 20em;
+  height: 22em;
+
+  box-shadow: -0.1em 0em 2em rgba(128, 128, 128, 0.698);
+
+  object-fit: cover;
+  /* object-position: center; */
+}
+
+/* valid and invalid champ */
+.valid {
+    border: 1px solid green!important;
+}
+.invalid {
+    border: 1px solid red!important;
+}

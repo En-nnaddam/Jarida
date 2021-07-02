@@ -33,10 +33,12 @@ if (isset($_POST['create'])) {
 
 
     if (isset($_POST['author'])) {
+        $age = $_POST['age'];
         $nationality = clean($_POST['nationality']);
         $speciality = clean($_POST['speciality']);
         $degree = clean($_POST['degree']);
     } else {
+        $age = '';
         $nationality = '';
         $speciality = '';
         $degree = '';
@@ -88,7 +90,7 @@ if (isset($_POST['create'])) {
                     if (move_uploaded_file($_FILES['picture']['tmp_name'], $target)) {
                         echo '<script> alert("Image uploaded succesfuly") </script>';
                     } else {
-                        echo '<script> alert("Oops!") </script>';
+                        echo '<script> alert("No picture Inserted") </script>';
                     }
 
                     // insert data author user into the database :
@@ -104,14 +106,16 @@ if (isset($_POST['create'])) {
 
                         $sql = 'INSERT INTO author(
                             userId,
+                            age,
                             nationality,
                             speciality,
                             degree)
-                        VALUES(?, ?, ?, ?)';
+                        VALUES(?, ?, ?, ?, ?)';
 
                         $requet = $db->prepare($sql);
                         $reponse = $requet->execute(array(
                             $id,
+                            $age,
                             $nationality,
                             $speciality,
                             $degree

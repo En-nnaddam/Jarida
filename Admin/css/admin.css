@@ -1,0 +1,54 @@
+.container {
+    width: 100%;
+}
+
+.container > nav {
+    width: 15em;
+    background-color: rgb(42, 42, 42);
+    padding-left: 1em;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container > nav > * {
+    position: absolute;
+}
+
+/* logo */
+.container > nav .logo {
+    top: 2em;
+}
+
+.container > nav h1 {
+    background-color: var(--color-light);
+    width: max-content;
+    padding: 2em 0.1em;
+    border-radius: 50%;
+    color: black;
+    margin-bottom: 2em;
+    bottom: 1em;
+}
+
+.container >nav ul {
+    top: 13em;
+}
+
+.container > nav li {
+    list-style: none;
+}
+
+.container > nav a {
+    /* text-decoration: none; */
+    color: rgb(233, 233, 233);
+}
+
+.container > nav a:hover {
+    color: rgb(255, 91, 31);
+}
+
+/* display conetnt */
+.container section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(184, 184, 184);
+}
