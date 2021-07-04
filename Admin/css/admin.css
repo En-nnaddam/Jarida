@@ -3,15 +3,15 @@
 }
 
 .container > nav {
-    width: 15em;
+    width: 13em;
     background-color: rgb(42, 42, 42);
-    padding-left: 1em;
+    /* padding-left: 1em; */
     min-height: 100vh;
     position: relative;
 }
 
 .container > nav > * {
-    position: absolute;
+    position: fixed;
 }
 
 /* logo */
@@ -27,23 +27,31 @@
     color: black;
     margin-bottom: 2em;
     bottom: 1em;
+    margin-inline: auto;
+    margin-left: 0.5em;
 }
 
 .container >nav ul {
+    margin-left: 0.5em;
     top: 13em;
+    width: 13em;
 }
 
 .container > nav li {
     list-style: none;
+
 }
 
-.container > nav a {
-    /* text-decoration: none; */
+.container > nav ul a {
+    text-decoration: none;
+    display: block;
     color: rgb(233, 233, 233);
+    padding-bottom: 0.5em;
 }
 
-.container > nav a:hover {
-    color: rgb(255, 91, 31);
+.container > nav ul a:hover {
+    text-decoration: underline;
+    color: var(--main-color-5);
 }
 
 /* display conetnt */
@@ -51,4 +59,9 @@
     width: 100%;
     min-height: 100vh;
     background-color: rgb(184, 184, 184);
+}
+
+/* content */
+.content {
+    width: 95%;
 }

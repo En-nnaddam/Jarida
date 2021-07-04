@@ -33,7 +33,7 @@ function getInfoAuthor($data, $description)
 
 function descriptionAuthor()
 {
-    $_SESSION['description'] = "Hey there! My name is " . $_SESSION['firstName'] . ", i'm " . $_SESSION['authorAge'] . " years old. I was born and raised in " . $_SESSION['authorNationality'] . " I am a " . $_SESSION['authorDegree'] . " graduate, furthermore i'm qualified as " . $_SESSION['authorSpeciality'] . ". I really enjoy writing and knowledge sharing, have fun reading my articles.";
+    $_SESSION['description'] = "Hey there! My name is " . $_SESSION['firstName'] . ", i'm " . $_SESSION['authorAge'] . " years old. I was born and raised in " . $_SESSION['authorNationality'] . " I am a " . $_SESSION['authorDegree'] . " graduate, furthermore i'm qualified as a " . $_SESSION['authorSpeciality'] . ". I really enjoy writing and knowledge sharing, have fun reading my articles.";
 }
 
 function descriptionUser($description)

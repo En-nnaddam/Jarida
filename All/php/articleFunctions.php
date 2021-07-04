@@ -43,7 +43,7 @@ function getInfoAuthorById(int $id)
 
                 <div class="card">
 
-                    <img src="<?= $imageUrl . $donnee['image'] ?>" alt="<?= $donnee['image']; ?>">
+                    <img src="<?= $imageUrl . $donnee['image'] ?>" alt="Article Image">
                     <div class="dateAndCategory flex gap">
                         <p alt="Hi"><?= $donnee['category'] ?></p>
                         <P><?= $donnee['date']  ?></P>
@@ -99,18 +99,32 @@ function getInfoAuthorById(int $id)
                     <div class="description-article">
                         <p><q><?= $donnee['description'] ?></q></p>
                     </div>
-                    <!-- Comments of Article -->
-                    <form action="../../Articles/php/addComment.php" method="POST" class="comments flex-column gap">
-                        <input type="text" name="comment" placeholder="Add Comment" required>
-                        <input type="text" name="idArticle" value="<?= $donnee['id'] ?>" style="display:none;">
-                        <a>
-                            <input type="submit" name="publish" value="publish">
-                        </a>
-                        <!-- comments -->
-                        <div id="comments" class="flex-column gap">
-                            <?php displayComments( $donnee['id'] ); ?>
-                        </div>
-                    </form>
+
+                    <!-- check if it's not admin server -->
+                    <?php if (!approve_disapprove_Article_Server()) : ?>
+                        <!-- Comments of Article -->
+                        <form action="../../Articles/php/addComment.php" method="POST" class="comments flex-column gap">
+                            <input type="text" name="comment" placeholder="Add Comment" required>
+                            <input type="text" name="idArticle" value="<?= $donnee['id'] ?>" style="display:none;">
+                            <a>
+                                <input type="submit" name="publish" value="publish">
+                            </a>
+                            <!-- comments -->
+                            <div id="comments" class="flex-column gap">
+                                <?php displayComments($donnee['id']); ?>
+                            </div>
+                            <!-- if it's admin server -->
+                        <?php else : ?>
+                            <form action="/Jarida/Admin/php/approve.php" method="post" class="flex-column gap">
+
+                                <input type="text" name='idArticle' value="<?= $donnee['id'] ?>">
+                                <input type="submit" value="Approve" name="submit"/>
+                                <button type="button" onclick="confirm(<?= $donnee['id'] ?>)">Disapprove</button>
+
+                            </form>
+                        <?php endif ?>
+
+                        </form>
 
                 </div>
 

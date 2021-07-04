@@ -14,7 +14,7 @@
     // connection :
     require '../../All/db/connexion.php';
     $db = connecteMyDb();
-    $sql = 'SELECT * FROM article WHERE author = ?';
+    $sql = 'SELECT * FROM article WHERE author = ? AND validation = 1';
     $requet = $db->prepare($sql);
 
     if ($requet->execute(array($userId))) : ?>
@@ -29,16 +29,7 @@
 
     <?php endif; ?>
     <!-- Boite Confirmation: -->
-    <form class="confirmation" style="display: none;" action="deleteArticle.php" method="post">
-
-        <div>
-            <input type="text" id="idArticle" name="idArticle">
-            <p> Are you sure ? you want to delete this article</p> <br>
-            <button type="submit" name="confirmation">Sure</button>
-            <button type="button" onClick="hideConfirm()">Not Sure</button>
-        </div>
-
-    </form>
+    <?php include('../../All/php/boiteConfirmation.html.php') ?>
 
 <?php else : ?>
 

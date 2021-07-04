@@ -86,6 +86,7 @@
 <script src="/Jarida/All/js/header.js"></script>
 <script src="/Jarida/All/js/drop_down_category.js"></script>
 <script src="/Jarida/All/js/loader.js"></script>
+<script src="/Jarida/All/js/subCategories.js"></script>
 
 </body>
 

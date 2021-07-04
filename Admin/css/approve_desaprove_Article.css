@@ -1,0 +1,12 @@
+
+.description-comment button,
+.description-comment input[ type = "submit" ] {
+    cursor: pointer;
+    width: 7em;
+    height: 2em;
+    margin-inline: auto;
+}
+
+.description-comment input[type="text"] {
+    display: none;
+}

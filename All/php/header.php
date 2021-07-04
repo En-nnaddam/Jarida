@@ -38,6 +38,7 @@
     <?php
     case "/Jarida/Articles/php/journals.php":
     case "/Jarida/Articles/php/myArticles.php":
+    case "/Jarida/All/php/fetchCategorie.php":
     case "/Jarida/Home/php/search.php":
     case "/Jarida/Articles/php/addArticle.php": ?>
 
@@ -146,42 +147,75 @@
       <li><a href="./about.php">About</a></li>
       <li><a href="/Jarida/Articles/php/journals.php">Journals</a></li>
 
-      <form action="./search.php" method="POST" class="flex-center gap">
-        <div class="select-box">
-          <div class="options-container">
-            <div class="option">
-              <input type="radio" name="produit" value="mobile" id="mobile" class="radio" />
-              <label for="mobile">Physical Sciences and Engineering</label>
-            </div>
-            <div class="option">
-              <input type="radio" name="produit" value="cuisine" id="cuisine" class="radio" />
-              <label for="cuisine">Life Sciences</label>
-            </div>
-            <div class="option">
-              <input type="radio" name="produit" value="console" id="console" class="radio" />
-              <label for="console">Health Sciences</label>
-            </div>
-            <div class="option">
-              <input type="radio" name="produit" value="electro" id="electro" class="radio" />
-              <label for="electro">Social Sciences and Humanities</label>
-            </div>
-            <div class="option">
-              <input type="radio" name="produit" value="Accessoires" id="Accessoires" class="radio" />
-              <label for="Accessoires">Education Sciences</label>
-            </div>
+      <div class="select-box">
+        <div class="options-container">
 
+          <div class="option" onmouseover="show_subCategories(0)" onmouseout="hide_subCategories(0)">
+            <input type="radio" name="produit" value="electro" id="electro" class="radio" />
+            <label>Physical Sciences and Engineering</label>
           </div>
-          <div class="selected">Category</div>
-        </div>
+          <!-- Physical Sciences and Engineering -->
+          <ul class="subCategories" onmouseover="show_subCategories(0)" onmouseout="hide_subCategories(0)">
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Chemistry">Chemistry</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Computer">Computer</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Earth and Planetary">Earth and Planetary</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Energy">Energy</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Mathematics">Mathematics</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Physics and Astronomy">Physics and Astronomy</a></li>
+          </ul>
 
-      </form>
+          <div class="option" onmouseover="show_subCategories(1)" onmouseout="hide_subCategories(1)">
+            <input type="radio" name="produit" value="electro" id="electro" class="radio" />
+            <label>Life Sciences</label>
+          </div>
+          <!-- Life Sciences -->
+          <ul class="subCategories" onmouseover="show_subCategories(1)" onmouseout="hide_subCategories(1)">
+
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Biochemistry and Genetics">Biochemistry and Genetics</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Environment">Environment</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Microbiology">Microbiology</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Neuroscience">Neuroscience</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Materials">Materials</a></li>
+          </ul>
+
+          <div class="option" onmouseover="show_subCategories(2)" onmouseout="hide_subCategories(2)">
+            <input type="radio" name="produit" value="electro" id="electro" class="radio" />
+            <label>Health Sciences</label>
+          </div>
+          <!-- Health sciences -->
+          <ul class="subCategories" onmouseover="show_subCategories(2)" onmouseout="hide_subCategories(2)">
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Medicine">Medicine</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Health">Health</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Pharmacology">Pharmacology</a></li>
+          </ul>
+
+          <div class="option" onmouseover="show_subCategories(3)" onmouseout="hide_subCategories(3)">
+            <input type="radio" name="produit" value="electro" id="electro" class="radio" />
+            <label>Social Sciences and Humanities</label>
+          </div>
+          <!-- Social Sciences and Humanities -->
+          <ul class="subCategories" onmouseover="show_subCategories(3)" onmouseout="hide_subCategories(3)">
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Arts">Arts</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Economics">Economics</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Psychology">Psychology</a></li>
+            <li><a href="../../All/php/fetchCategorie.php?categorie=Humanity">Humanity</a></li>
+          </ul>
+
+
+        </div>
+        <div class="selected">Category</div>
+
+      </div>
+
 
       <li><a href="./news.php">News</a></li>
       <li><a href="./archive.php">Archive</a></li>
-      <li><a href="./contact.php">Contact Us</a></li>
+      <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=VpCqJbQVlNVCBnxkhnFCZKGwJkwBKQgwDWBRhtSlZSjknvrXMjbgJxvhhxVqpGZfnpbDFQv" target="_blank">Contact Us</a></li>
 
     </ul>
   </nav>
+
+
   <!-- ===== End navigation ===== -->
 
   <!-- ===== Navigation User profile ===== -->

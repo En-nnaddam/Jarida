@@ -43,4 +43,9 @@ function removeUserServer()
     return isEqualServer('/Jarida/Admin/php/removeUser.php');
 }
 
+function approve_disapprove_Article_Server()
+{
+    return isEqualServer('/Jarida/Admin/php/approve_disapprove_Article.php');
+}
+
 

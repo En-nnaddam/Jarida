@@ -55,7 +55,7 @@ if (isset($_POST['publish'])) {
         if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
             echo '<script> alert("Image uploaded succesfuly"); </script>';
         } else {
-            echo '<script> alert("Oops!"); </script>';
+            echo '<script> alert("problem found: No Image Inserted"); </script>';
         }
 
         // Move the uploaded pdf into the folder pdfs:
@@ -74,13 +74,11 @@ if (isset($_POST['publish'])) {
 <?php if ($_SESSION['author']) : ?>
     <form action="" method="POST" class="flex-column" id="addArticle" enctype="multipart/form-data">
 
-        <label>Title</label>
-        <input type="text" name="title" maxlength="50" id="title" required><br>
+        <input type="text" name="title" maxlength="50" id="title" placeholder="Title" required><br>
 
-        <input type="file" name="image" class="file-image" accept="image/png, image/jpeg" required><br>
+        <input type="file" name="image"  class="file-image" accept="image/png, image/jpeg" required><br>
 
-        <label for="description">Description</label>
-        <textarea name="description" id="description" cols="50" rows="10" required></textarea><br>
+        <textarea name="description" maxlength="100" id="description" cols="50" rows="5" placeholder="Description" required></textarea><br>
 
         <input type="file" name="pdf" class="file-pdf" accept="application/pdf" required><br>
 
@@ -88,22 +86,21 @@ if (isset($_POST['publish'])) {
             <!-- Physical Sciences and Engineering -->
             <option value="Chemistry">Chemistry</option>
             <option value="Computer">Computer</option>
-            <option value="Earth & Planetary">Earth & Planetary </option>
+            <option value="Earth and Planetary">Earth & Planetary </option>
             <option value="Energy">Energy</option>
             <option value="Mathematics">Mathematics</option>
-            <option value="Physics & Astronomy">Physics & Astronomy</option>
+            <option value="Physics and Astronomy">Physics & Astronomy</option>
 
             <!-- Life Sciences -->
-            <option value="Agriculture & Biology
-">Agriculture & Biology
-            </option>
-            <option value="Biochemistry & Genetics ">Biochemistry & Genetics
+            <option value="Biochemistry and Genetics ">Biochemistry & Genetics
             </option>
             <option value="Environment">Environment
             </option>
             <option value="Microbiology">Microbiology
             </option>
             <option value="Neuroscience">Neuroscience
+            </option>
+            <option value="Materials">Materials
             </option>
 
             <!-- Health Sciences -->

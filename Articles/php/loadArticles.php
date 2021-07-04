@@ -7,7 +7,8 @@ $db = connecteMyDb();
 $sql = 'SELECT ar.* , us.firstName, us.lastName
 from article ar
 INNER JOIN user us
-on ar.author = us.id';
+on ar.author = us.id
+where validation = 1';
 $reponse = $db->query($sql);
 ?>
 <br><br>
